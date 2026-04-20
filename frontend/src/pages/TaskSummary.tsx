@@ -1,0 +1,25 @@
+import type { TaskRecord } from "../types/index.ts";
+
+const TaskSummary = ({ tasks }: { tasks: TaskRecord[] }) => {
+  let completed_tasks = tasks.reduce((acc, t) => {
+    if (t.completed) return acc + 1;
+    return acc;
+  }, 0);
+
+  let total_tasks = tasks.length;
+  let incomplete_tasks = total_tasks - completed_tasks;
+
+  return (
+    <div className="page-container">
+      <img className="background-img" src="/cloud_bg.png"></img>
+
+      <div className="card-container-stats">
+        <h1 className="preview-title">Completed Tasks: {completed_tasks}</h1>
+        <h1 className="preview-title">Incomplete Tasks: {incomplete_tasks}</h1>
+      </div>
+      <img className="background-img" src="/cloud_bg.png"></img>
+
+    </div>)
+}
+
+export default TaskSummary;
