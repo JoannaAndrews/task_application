@@ -54,6 +54,9 @@ const SignUp = ({ onSignUp, API_URL = "http://localhost:3001" }: SignUpProps) =>
         { headers: { "Content-Type": "application/json" } }
       );
 
+      const { idToken, uid, name: userName, email: userEmail } = res.data.data;
+      onSignUp({ uid, name: userName, email: userEmail }, idToken);
+
       // After registration, log the user in to get a token
       navigate("/login");
 

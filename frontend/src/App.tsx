@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Route, Routes, useLocation, useNavigate, Navigate } from "react-router";
+import { Route, Routes, useNavigate, Navigate } from "react-router";
 import Layout from "./components/Layout.tsx";
 import Login from "./pages/Login.tsx";
 import SignUp from "./pages/SignUp.tsx";
