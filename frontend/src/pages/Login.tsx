@@ -125,7 +125,6 @@ const Login = ({ onLogin, API_URL = "http://localhost:3001" }: LoginProps) => {
           </div>
         </div>
       </div>
-      <img className="background-img" src="/cloud_bg.png"></img>
     </div>
   );
 };

@@ -73,15 +73,14 @@ const SignUp = ({ onSignUp, API_URL = "http://localhost:3001" }: SignUpProps) =>
   };
 
   return (
-    <div className={signupStyles.pageContainer}>
-      <div className={signupStyles.cardContainer}>
-        <div className={signupStyles.header}>
+    <div className="page-container">
+      <img className="background-img" src="/cloud_bg.png"></img>
+
+      <div className="card-container">
+        <div className="login-header">
           <button onClick={() => navigate(-1)} className={signupStyles.backButton}>
             <ArrowLeft className="w-5 h-5" />
           </button>
-          <div className={signupStyles.avatar}>
-            <User className="w-10 h-10 text-white" />
-          </div>
           <h1 className={signupStyles.headerTitle}>Create Account</h1>
         </div>
 
@@ -93,14 +92,11 @@ const SignUp = ({ onSignUp, API_URL = "http://localhost:3001" }: SignUpProps) =>
           <form onSubmit={handleSubmit} noValidate>
             {/* Name */}
             <div className="mb-6">
-              <label htmlFor="name" className={signupStyles.label}>Full Name</label>
-              <div className={signupStyles.inputContainer}>
-                <div className={signupStyles.inputIcon}>
-                  <User className="w-5 h-5" />
-                </div>
+              <label htmlFor="name" className="login-label">Full Name</label>
+              <div className="login-input-container">
                 <input type="text" id="name" value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className={`${signupStyles.input} ${errors.name ? "border-red-300" : "border-gray-200"}`}
+                  className={`password-input ${errors.name ? "border-red-300" : "border-gray-200"}`}
                   placeholder="John Doe"
                 />
               </div>
@@ -109,14 +105,11 @@ const SignUp = ({ onSignUp, API_URL = "http://localhost:3001" }: SignUpProps) =>
 
             {/* Email */}
             <div className="mb-6">
-              <label htmlFor="email" className={signupStyles.label}>Email</label>
-              <div className={signupStyles.inputContainer}>
-                <div className={signupStyles.inputIcon}>
-                  <Mail className="w-5 h-5" />
-                </div>
+              <label htmlFor="email" className="login-label">Email</label>
+              <div className="login-input-container">
                 <input type="email" id="email" value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className={`${signupStyles.input} ${errors.email ? "border-red-300" : "border-gray-200"}`}
+                  className={`password-input ${errors.email ? "border-red-300" : "border-gray-200"}`}
                   placeholder="example@email.com"
                 />
               </div>
@@ -125,18 +118,15 @@ const SignUp = ({ onSignUp, API_URL = "http://localhost:3001" }: SignUpProps) =>
 
             {/* Password */}
             <div className="mb-6">
-              <label htmlFor="password" className={signupStyles.label}>Password</label>
-              <div className={signupStyles.inputContainer}>
-                <div className={signupStyles.inputIcon}>
-                  <Lock className="w-5 h-5" />
-                </div>
+              <label htmlFor="password" className="login-label"> Password</label>
+              <div className="login-input-container">
                 <input type={showPassword ? "text" : "password"} id="password" value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className={`${signupStyles.input} ${errors.password ? "border-red-300" : "border-gray-200"}`}
+                  className={`password-input ${errors.password ? "border-red-300" : "border-gray-200"}`}
                   placeholder="Your password here"
                 />
                 <button type="button" onClick={() => setShowPassword(!showPassword)}
-                  className={signupStyles.passwordToggle}>
+                  className="password-toggle">
                   {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                 </button>
               </div>
@@ -145,16 +135,17 @@ const SignUp = ({ onSignUp, API_URL = "http://localhost:3001" }: SignUpProps) =>
 
             {/* Confirm Password */}
             <div className="mb-6">
-              <label htmlFor="confirmPassword" className={signupStyles.label}>Confirm Password</label>
-              <div className={signupStyles.inputContainer}>
-                <div className={signupStyles.inputIcon}>
-                  <Lock className="w-5 h-5" />
-                </div>
+              <label htmlFor="confirmPassword" className="login-label">Confirm Password</label>
+              <div className="login-input-container">
                 <input type="password" id="confirmPassword" value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className={`${signupStyles.input} ${errors.confirmPassword ? "border-red-300" : "border-gray-200"}`}
+                  className={`password-input ${errors.confirmPassword ? "border-red-300" : "border-gray-200"}`}
                   placeholder="Repeat your password"
                 />
+                <button type="button" onClick={() => setShowPassword(!showPassword)}
+                  className="password-toggle">
+                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                </button>
               </div>
               {errors.confirmPassword && <p className={signupStyles.fieldError}>{errors.confirmPassword}</p>}
             </div>
