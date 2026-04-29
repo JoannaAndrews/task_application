@@ -2,7 +2,7 @@ import { useState } from "react";
 import { signupStyles } from "../assets/dummyStyles.js";
 import { useNavigate, Link } from "react-router";
 import axios from "axios";
-import { ArrowLeft, Eye, EyeOff, Lock, Mail, User } from "lucide-react";
+import { ArrowLeft, Eye, EyeOff } from "lucide-react";
 import type { SignUpProps, FormErrors } from "../types/index.ts";
 
 const SignUp = ({ onSignUp, API_URL = "http://localhost:3001" }: SignUpProps) => {
