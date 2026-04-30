@@ -1,8 +1,8 @@
-import { LoginBody, RegisterBody, UpdatePasswordBody, UpdateProfileBody, UserRecord } from "../types/index.ts";
+import { LoginBody, RegisterBody, UpdatePasswordBody, UpdateProfileBody, UserRecord } from "../types/index";
 import { Request, Response } from "express";
 import { FieldValue } from 'firebase-admin/firestore';
-import { auth, usersCollection } from "../firebase.js";
-import { AuthedRequest } from '../types/index.js'
+import { auth, usersCollection } from "../firebase";
+import { AuthedRequest } from '../types/index'
 
 
 const TOKEN_EXPIRES = '24h';

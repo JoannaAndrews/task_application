@@ -3,22 +3,22 @@ import cors from 'cors';
 import 'dotenv/config';
 import { createRequire } from 'module';
 
-const require = createRequire(import.meta.url);
-const serviceAccount = require('./serviceAccount.json');
+// const require = createRequire(import.meta.url);
+// const serviceAccount = require('./serviceAccount.json');
+import serviceAccount from './serviceAccount.json';
 
 // npm i --save-dev @types/cors
 
-import { initializeApp, cert } from 'firebase-admin/app';
+import { initializeApp, cert, ServiceAccount } from 'firebase-admin/app';
 
-import userRouter from './routes/userRoutes.ts';
-import taskRouter from './routes/taskRoute.ts';
+
+import userRouter from './routes/userRoutes';
+import taskRouter from './routes/taskRoute';
 import { getFirestore } from 'firebase-admin/firestore';
 import { getAuth } from 'firebase-admin/auth';
 
 initializeApp({
-  credential: cert(
-    serviceAccount
-  )
+  credential: cert(serviceAccount as ServiceAccount)
 });
 
 //DB
@@ -30,7 +30,7 @@ export const auth = getAuth();
 export const usersCollection = db.collection('users');
 export const tasksCollection = db.collection('tasks');
 
-const port = 3001;
+const port = process.env.PORT || 3001;
 const app = express();
 
 // MIDDLEWARES

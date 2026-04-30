@@ -1,6 +1,6 @@
 import express from 'express';
-import authMiddleware from '../middleware/auth.ts';
-import { addTask, getAllTasks, updateTask, deleteTask } from '../controllers/taskController.ts'
+import authMiddleware from '../middleware/auth';
+import { addTask, getAllTasks, updateTask, deleteTask } from '../controllers/taskController'
 
 const taskRouter = express.Router();
 

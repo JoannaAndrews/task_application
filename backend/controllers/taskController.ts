@@ -1,8 +1,8 @@
-import { TaskRecord, AddBody, UpdateTaskBody } from "../types/index.ts";
+import { TaskRecord, AddBody, UpdateTaskBody } from "../types/index";
 import { Request, Response } from "express";
 import { FieldValue } from 'firebase-admin/firestore';
-import { tasksCollection, auth } from "../firebase.js";
-import { AuthedRequest } from '../types/index.js'
+import { tasksCollection, auth } from "../firebase";
+import { AuthedRequest } from '../types/index'
 
 
 //Add a task

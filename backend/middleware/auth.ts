@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import { auth } from '../firebase.js';
-import { AuthedRequest } from '../types/index.js'
+import { auth } from '../firebase';
+import { AuthedRequest } from '../types/index'
 
 const authMiddleWare = async (req: AuthedRequest, res: Response, next: NextFunction): Promise<void> => {
 
