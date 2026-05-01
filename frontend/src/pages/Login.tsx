@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { loginStyles } from "../assets/dummyStyles.js";
-import { Eye, EyeOff, Lock, Mail, User } from 'lucide-react';
+import { Eye, EyeOff, Lock, Mail } from 'lucide-react';
 import { Link } from "react-router";
 import axios from "axios";
 import type { LoginProps } from "../types/index.ts";
@@ -44,9 +44,6 @@ const Login = ({ onLogin, API_URL = "http://localhost:3001" }: LoginProps) => {
 
       <div className="card-container">
         <div className="login-header">
-          <div className="avatar">
-            <User className="person-icon" />
-          </div>
           <h1 className="login-header-title">Welcome back</h1>
           <p className="login-header-subtitle">
             Sign in to your account
