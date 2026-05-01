@@ -64,6 +64,9 @@
 
 body {
   margin: 0;
+  background: var(--bg);
+  color: var(--text);
+
 }
 
 h1,
