@@ -14,8 +14,10 @@ const TaskSummary = ({ tasks }: { tasks: TaskRecord[] }) => {
       <img className="background-img" src="/cloud_bg.png"></img>
 
       <div className="card-container-stats">
-        <p className="preview-title">Completed Tasks: {completed_tasks}</p>
-        <p className="preview-title">Incomplete Tasks: {incomplete_tasks}</p>
+        <p className="stats-label">Completed Tasks</p>
+        <p className="stats-value">{completed_tasks}</p>
+        <p className="stats-label">Incomplete Tasks</p>
+        <p className="stats-value">{incomplete_tasks}</p>
       </div>
       <img className="background-img" src="/cloud_bg.png"></img>
 

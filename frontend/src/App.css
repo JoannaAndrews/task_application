@@ -4,6 +4,22 @@
   box-sizing: border-box;
 }
 
+
+.stats-label {
+  font-size: 13px;
+  color: #4a7a9b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 6px 0;
+}
+
+.stats-value {
+  font-size: 36px;
+  font-weight: 500;
+  color: #1e3d52;
+  margin: 0;
+}
+
 .nav-styles {
   display: flex;
   justify-content: space-between;
