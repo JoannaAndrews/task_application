@@ -5,7 +5,8 @@ import { Link } from "react-router";
 import axios from "axios";
 import type { LoginProps } from "../types/index.ts";
 
-const Login = ({ onLogin, API_URL = "http://localhost:3001" }: LoginProps) => {
+// "https://localhost:3001"
+const Login = ({ onLogin, API_URL = "https://my-server-571961934177.us-central1.run.app" }: LoginProps) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);

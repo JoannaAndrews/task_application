@@ -11,7 +11,7 @@ import './App.css';
 import type { AuthProfile, UpdateTaskBody, TaskRecord } from "./types/index.ts";
 
 
-const API_URL = "http://localhost:3001";
+const API_URL = "https://my-server-571961934177.us-central1.run.app"; //"http://localhost:3001";
 
 //to protect the routes
 const ProtectedRoute = ({ user, children }: { user: AuthProfile | null, children: React.ReactNode }) => {
@@ -132,8 +132,8 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/login" element={<Login onLogin={handleLogin} API_URL="http://localhost:3001"></Login>}></Route>
-        <Route path="/signup" element={<SignUp onSignUp={handleSignup} API_URL="http://localhost:3001"></SignUp>}></Route>
+        <Route path="/login" element={<Login onLogin={handleLogin} API_URL="https://my-server-571961934177.us-central1.run.app" ></Login>}></Route>
+        <Route path="/signup" element={<SignUp onSignUp={handleSignup} API_URL="https://my-server-571961934177.us-central1.run.app" ></SignUp>}></Route>
 
         <Route element={
           <ProtectedRoute user={user}>

@@ -5,7 +5,8 @@ import axios from "axios";
 import { ArrowLeft, Eye, EyeOff } from "lucide-react";
 import type { SignUpProps, FormErrors } from "../types/index.ts";
 
-const SignUp = ({ onSignUp, API_URL = "http://localhost:3001" }: SignUpProps) => {
+
+const SignUp = ({ onSignUp, API_URL = "https://my-server-571961934177.us-central1.run.app" }: SignUpProps) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
